@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ff69b4);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* HUD */
+.hud {
+    padding: 15px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 20px;
+    background: rgba(255,255,255,0.3);
+    margin: 10px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 10%;
+    background: hotpink;
+    transition: width 0.5s ease;
+}
+
+/* Pages */
+.page {
+    display: none;
+    padding: 50px;
+    min-height: 60vh;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Buttons */
+.arcade-btn {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 18px;
+    background: hotpink;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px pink;
+}
+
+.arcade-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+}
+
+.arcade-btn.small {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+/* Slideshow */
+.slideshow-container img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px white;
+    margin-bottom: 20px;
+}
+
+#slideCaption {
+    font-size: 20px;
+    min-height: 30px;
+}
+
+/* Big Question */
+.big-question {
+    font-size: 40px;
+    text-shadow: 0 0 10px white;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: pink;
+    padding: 30px;
+    border-radius: 20px;
+    color: black;
+}
+
+/* Celebration */
+.celebration {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(45deg, hotpink, deeppink);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 5s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* Celebration Glow */
+.celebration h1 {
+    font-size: 50px;
+    text-shadow: 0 0 20px white, 0 0 40px hotpink;
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 30px white, 0 0 50px pink; }
+}
+
+.page {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.page.active {
+    opacity: 1;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.4s;
+}
+
+@media (max-width: 768px) {
+    .slideshow-container img {
+        width: 90%;
+    }
+
+    .big-question {
+        font-size: 28px;
+    }
+
+    .arcade-btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .progress-bar {
+        width: 90%;
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slide-btn {
+    background: hotpink;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px pink;
+    transition: 0.3s;
+}
+
+.slide-btn:hover {
+    transform: scale(1.2);
+}
+
+.styled-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid hotpink;
+    outline: none;
+    font-size: 16px;
+    width: 250px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.styled-input:focus {
+    box-shadow: 0 0 15px hotpink;
+}
+
+.highlight-yes {
+    animation: glowYes 1s infinite alternate;
+}
+
+@keyframes glowYes {
+    from { box-shadow: 0 0 10px white; }
+    to { box-shadow: 0 0 25px white, 0 0 40px hotpink; }
+}
+
+#yesBtn {
+    display: none;
+}
+
+.no {
+    position: relative;
+}

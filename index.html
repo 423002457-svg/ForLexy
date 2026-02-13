@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Mode 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
+    <!-- Love Level HUD -->
+    <div class="hud">
+        <h2>Love Level: <span id="loveLevel">10%</span></h2>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <h3 id="modeStatus">Valentine Mode: Locked 🔒</h3>
+    </div>
+
+    <!-- PAGE 1: Landing -->
+    <section id="landing" class="page active">
+        <h1>Hi love… I made something special just for you ❤️</h1>
+        <button id="startBtn" class="arcade-btn">
+            Click to Begin Our Story
+        </button>
+    </section>
+
+    <!-- PAGE 2: Slideshow -->
+    <section id="slideshow" class="page">
+        <div class="slideshow-container">
+    <button id="prevSlide" class="slide-btn">◀</button>
+    <img id="slideImage" src="images/photo1.jpg">
+    <button id="nextSlide" class="slide-btn">▶</button>
+    <p id="slideCaption"></p>
+</div>
+
+        <button id="toQuestionBtn" class="arcade-btn">
+            There’s something I want to ask you…
+        </button>
+    </section>
+
+    <!-- PAGE 3: Question -->
+    <section id="question" class="page">
+        <h1 class="big-question" id="typedQuestion"></h1>
+
+        <div class="btn-group">
+            <button id="yesBtn" class="arcade-btn yes">❤️ YES</button>
+            <button id="noBtn" class="arcade-btn no">💔 NO</button>
+        </div>
+    </section>
+
+    <!-- Love Challenge Popup -->
+    <div id="challengePopup" class="popup">
+        <div class="popup-content">
+            <h2>To say No… you must answer this correctly.</h2>
+            <p>When did we first have a date?</p>
+            <input type="text" id="answerInput" class="styled-input" placeholder="Be specific w date, bae!">
+            <button id="submitAnswer" class="arcade-btn small">Submit</button>
+            <p id="challengeMessage"></p>
+        </div>
+    </div>
+
+    <!-- Final Celebration Screen -->
+    <div id="celebration" class="celebration">
+        <h1>Valentine Mode: UNLOCKED ❤️</h1>
+        <p>Best decision ever. I can’t wait for our Valentine’s date ❤️</p>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+
+<canvas id="fireworksCanvas"></canvas>
+
+</body>
+</html>
