@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <title>Valentine Mode 💖</title>
     <link rel="stylesheet" href="style.css">
+
+<script>
+        const correctPassword = "lexychix";
+        const userInput = prompt("Enter the secret password ❤️");
+
+        if (userInput === correctPassword) {
+            document.addEventListener("DOMContentLoaded", function () {
+                document.body.style.display = "block";
+            });
+        } else {
+            document.addEventListener("DOMContentLoaded", function () {
+                document.body.innerHTML = `
+                    <div style="
+                        height:100vh;
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                        background:black;
+                        color:white;
+                        font-family:Arial;
+                    ">
+                        <h1>Access Denied 💔</h1>
+                    </div>
+                `;
+                document.body.style.display = "block";
+            });
+        }
+    </script>
+
 </head>
 <body>
 
